@@ -1,0 +1,353 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem 3rem;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.3125rem;
+  letter-spacing: -0.03em;
+  color: var(--apple-text);
+}
+
+.lang {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 3px;
+  background: var(--apple-pill-bg);
+}
+
+.lang-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--apple-sub);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+
+  &:hover {
+    color: var(--apple-text);
+  }
+
+  &.active {
+    background: var(--apple-pill-active);
+    color: var(--apple-text);
+    box-shadow: var(--apple-shadow-tiny);
+  }
+}
+
+.main {
+  flex: 1;
+}
+
+.hero {
+  text-align: center;
+  padding: 1rem 0 2.5rem;
+}
+
+.hero-eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--apple-blue);
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 6.5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0 0 1rem;
+  color: var(--apple-text);
+}
+
+.hero-lead {
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.4211;
+  letter-spacing: 0.004em;
+  color: var(--apple-sub);
+  margin: 0 auto;
+  max-width: 28rem;
+}
+
+.get-app {
+  margin-bottom: 3rem;
+}
+
+.ios-windows {
+  margin-bottom: 3rem;
+}
+
+.ios-windows-inner {
+  background: var(--apple-card);
+  border-radius: var(--apple-radius-xl);
+  padding: 2rem 1.5rem 1.75rem;
+  box-shadow: var(--apple-shadow-card);
+  border: 1px solid var(--apple-card-border);
+}
+
+.ios-windows-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--apple-blue);
+}
+
+.ios-windows-title {
+  font-size: clamp(1.375rem, 4vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 1.15;
+  margin: 0 0 0.85rem;
+  color: var(--apple-text);
+}
+
+.ios-windows-lead {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.002em;
+  color: var(--apple-body);
+  margin: 0 0 1.15rem;
+}
+
+.ios-windows-text {
+  margin: 0 0 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.47059;
+  letter-spacing: 0.004em;
+  color: var(--apple-body);
+
+  &:last-of-type {
+    margin-bottom: 1.15rem;
+  }
+}
+
+.ios-windows-list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+  color: var(--apple-body);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: 0.004em;
+
+  li {
+    margin-bottom: 0.55rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.ios-windows-figure {
+  margin: 0;
+  border-radius: var(--apple-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--apple-card-border);
+  background: var(--apple-card-inner);
+  line-height: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+}
+
+.get-app-inner {
+  background: var(--apple-card);
+  border-radius: var(--apple-radius-xl);
+  padding: 2rem 1.5rem 2.25rem;
+  box-shadow: var(--apple-shadow-card);
+  border: 1px solid var(--apple-card-border);
+}
+
+.get-app-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-align: center;
+  margin: 0 0 0.35rem;
+  color: var(--apple-text);
+}
+
+.get-app-lead {
+  font-size: 1.0625rem;
+  color: var(--apple-sub);
+  text-align: center;
+  margin: 0 0 1.75rem;
+}
+
+.platform-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 520px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+}
+
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  border-radius: var(--apple-radius-lg);
+  background: var(--apple-card-inner);
+  border: 1px solid var(--apple-card-border);
+  min-height: 100%;
+}
+
+.platform-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--apple-muted);
+  margin-bottom: 1rem;
+}
+
+.btn-apple {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.35rem;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: #fff;
+  background: var(--apple-blue);
+  border-radius: 980px;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background: var(--apple-blue-hover);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.platform-hint {
+  margin: 1rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--apple-muted);
+  max-width: 32ch;
+}
+
+.app-store-link {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 10px;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    opacity: 0.88;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  img {
+    display: block;
+    width: 180px;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+.block {
+  margin-bottom: 2.5rem;
+
+  .block-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.85rem;
+    color: var(--apple-text);
+  }
+
+  p {
+    margin: 0 0 1rem;
+    font-size: 1.0625rem;
+    line-height: 1.47059;
+    letter-spacing: 0.004em;
+    color: var(--apple-body);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.features {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--apple-body);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: 0.004em;
+
+  li {
+    margin-bottom: 0.65rem;
+    padding-left: 0.15rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  font-size: 0.75rem;
+  color: var(--apple-muted);
+  text-align: center;
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,100 @@
+<div class="page">
+  <header class="header">
+    <span class="logo">{{ t().brand }}</span>
+    <div class="lang" role="group" [attr.aria-label]="t().langLabel">
+      <button
+        type="button"
+        class="lang-btn"
+        [class.active]="lang() === 'en'"
+        (click)="setLang('en')"
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        class="lang-btn"
+        [class.active]="lang() === 'ru'"
+        (click)="setLang('ru')"
+      >
+        RU
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <p class="hero-eyebrow">{{ t().brand }}</p>
+      <h1 class="hero-title">{{ t().heroTitle }}</h1>
+      <p class="hero-lead">{{ t().heroLead }}</p>
+    </section>
+
+    <section class="get-app" aria-labelledby="get-app-heading">
+      <div class="get-app-inner">
+        <h2 id="get-app-heading" class="get-app-title">{{ t().sectionGetApp }}</h2>
+        <p class="get-app-lead">{{ t().getAppLead }}</p>
+
+        <div class="platform-grid">
+          <div class="platform-card">
+            <span class="platform-label">Windows</span>
+            <a class="btn-apple" [href]="downloadWindowsUrl">{{ t().downloadWindows }}</a>
+            <p class="platform-hint">{{ t().downloadWindowsHint }}</p>
+          </div>
+
+          <div class="platform-card">
+            <span class="platform-label">{{ t().downloadIosCaption }}</span>
+            <a
+              class="app-store-link"
+              [href]="appStoreUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="t().appStoreBadgeAria"
+            >
+              <img [src]="appStoreBadgeSrc" width="180" height="54" alt="" />
+            </a>
+            <p class="platform-hint">{{ t().downloadIosHint }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ios-windows" aria-labelledby="ios-windows-title">
+      <div class="ios-windows-inner">
+        <p class="ios-windows-eyebrow">{{ t().sectionIosWindowsEyebrow }}</p>
+        <h2 id="ios-windows-title" class="ios-windows-title">{{ t().sectionIosWindowsTitle }}</h2>
+        <p class="ios-windows-lead">{{ t().sectionIosWindowsLead }}</p>
+        <p class="ios-windows-text">{{ t().iosWinP1 }}</p>
+        <p class="ios-windows-text">{{ t().iosWinP2 }}</p>
+        <ul class="ios-windows-list">
+          <li>{{ t().iosWinBulletHeic }}</li>
+          <li>{{ t().iosWinBulletVideo }}</li>
+          <li>{{ t().iosWinBulletBundled }}</li>
+        </ul>
+        @if (iosMediaPreviewSrc) {
+          <figure class="ios-windows-figure">
+            <img [src]="iosMediaPreviewSrc" [attr.alt]="t().iosMediaImageAlt" loading="lazy" decoding="async" />
+          </figure>
+        }
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title">{{ t().sectionAbout }}</h2>
+      <p>{{ t().aboutP1 }}</p>
+      <p>{{ t().aboutP2 }}</p>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title">{{ t().sectionFeatures }}</h2>
+      <ul class="features">
+        <li>{{ t().feat1 }}</li>
+        <li>{{ t().feat2 }}</li>
+        <li>{{ t().feat3 }}</li>
+        <li>{{ t().feat4 }}</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    {{ t().footer }}
+  </footer>
+</div>

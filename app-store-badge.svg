@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="54" viewBox="0 0 180 54" role="img" aria-labelledby="as-title">
+  <title id="as-title">Download on the App Store</title>
+  <rect width="180" height="54" rx="10" fill="#000"/>
+  <rect x="0.5" y="0.5" width="179" height="53" rx="9.5" fill="none" stroke="rgba(255,255,255,0.12)"/>
+  <text x="90" y="21" fill="#fff" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" font-weight="400" letter-spacing="0.02em">Download on the</text>
+  <text x="90" y="39" fill="#fff" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="600" letter-spacing="-0.02em">App Store</text>
+</svg>
