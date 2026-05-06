@@ -36,7 +36,9 @@
         <div class="platform-grid">
           <div class="platform-card">
             <span class="platform-label">Windows</span>
-            <a class="btn-apple" [href]="downloadWindowsUrl">{{ t().downloadWindows }}</a>
+            <a class="btn-apple" [href]="downloadWindowsUrl" (click)="onDownloadWindowsClick($event)">{{
+              t().downloadWindows
+            }}</a>
             <p class="platform-hint">{{ t().downloadWindowsHint }}</p>
           </div>
 
@@ -97,4 +99,51 @@
   <footer class="footer">
     {{ t().footer }}
   </footer>
+
+  @if (isWindowsModalOpen()) {
+    <div class="modal-backdrop" (click)="closeWindowsModal()">
+      <section
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="windows-warning-title"
+        (click)="$event.stopPropagation()"
+      >
+        <button
+          type="button"
+          class="modal-close"
+          (click)="closeWindowsModal()"
+          [attr.aria-label]="t().downloadWindowsModalClose"
+        >
+          ×
+        </button>
+
+        <h2 id="windows-warning-title" class="modal-title">{{ t().downloadWindowsModalTitle }}</h2>
+        <p class="modal-lead">{{ t().downloadWindowsModalLead }}</p>
+        <p class="modal-notice">{{ t().downloadWindowsModalNotice }}</p>
+
+        <div class="modal-steps">
+          <figure class="modal-step">
+            <img [src]="windowsWarningStep1Src" [attr.alt]="t().downloadWindowsModalImage1Alt" loading="lazy" />
+            <figcaption>
+              <strong>{{ t().downloadWindowsStep1Title }}</strong>
+              <span>{{ t().downloadWindowsStep1Text }}</span>
+            </figcaption>
+          </figure>
+
+          <figure class="modal-step">
+            <img [src]="windowsWarningStep2Src" [attr.alt]="t().downloadWindowsModalImage2Alt" loading="lazy" />
+            <figcaption>
+              <strong>{{ t().downloadWindowsStep2Title }}</strong>
+              <span>{{ t().downloadWindowsStep2Text }}</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <button type="button" class="btn-apple modal-action" (click)="closeWindowsModal()">
+          {{ t().downloadWindowsModalClose }}
+        </button>
+      </section>
+    </div>
+  }
 </div>

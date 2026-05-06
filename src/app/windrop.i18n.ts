@@ -18,6 +18,16 @@ export interface WindropStrings {
   getAppLead: string;
   downloadWindows: string;
   downloadWindowsHint: string;
+  downloadWindowsModalTitle: string;
+  downloadWindowsModalLead: string;
+  downloadWindowsModalNotice: string;
+  downloadWindowsStep1Title: string;
+  downloadWindowsStep1Text: string;
+  downloadWindowsStep2Title: string;
+  downloadWindowsStep2Text: string;
+  downloadWindowsModalClose: string;
+  downloadWindowsModalImage1Alt: string;
+  downloadWindowsModalImage2Alt: string;
   downloadIosCaption: string;
   downloadIosHint: string;
   appStoreBadgeAria: string;
@@ -56,7 +66,21 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     sectionGetApp: 'Get WinDrop',
     getAppLead: 'Choose your platform.',
     downloadWindows: 'Download for Windows',
-    downloadWindowsHint: 'Installer for Windows (64-bit). Set the link in code when your build is ready.',
+    downloadWindowsHint: 'Installer for Windows (64-bit). Download starts immediately after click.',
+    downloadWindowsModalTitle: 'Windows SmartScreen notice',
+    downloadWindowsModalLead:
+      'Your download has started. Windows may show a blue SmartScreen warning because the app is not code-signed yet.',
+    downloadWindowsModalNotice:
+      'This is expected for new unsigned builds. To continue, follow the 2 steps below.',
+    downloadWindowsStep1Title: 'Step 1: click "More info"',
+    downloadWindowsStep1Text:
+      'On the first warning screen, press "More info" to reveal additional options.',
+    downloadWindowsStep2Title: 'Step 2: click "Run anyway"',
+    downloadWindowsStep2Text:
+      'On the next screen, press "Run anyway" to launch the installer.',
+    downloadWindowsModalClose: 'Got it',
+    downloadWindowsModalImage1Alt: 'Windows SmartScreen first screen with More info highlighted',
+    downloadWindowsModalImage2Alt: 'Windows SmartScreen second screen with Run anyway highlighted',
     downloadIosCaption: 'iPhone and iPad',
     downloadIosHint: 'Test App Store link — replace with your real listing when published.',
     appStoreBadgeAria: 'Download on the App Store',
@@ -97,7 +121,21 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     getAppLead: 'Выберите платформу.',
     downloadWindows: 'Скачать для Windows',
     downloadWindowsHint:
-      'Установщик для Windows (64-bit). Укажите ссылку в коде, когда сборка будет готова.',
+      'Установщик для Windows (64-bit). Загрузка начинается сразу после нажатия.',
+    downloadWindowsModalTitle: 'Предупреждение Windows SmartScreen',
+    downloadWindowsModalLead:
+      'Загрузка уже началась. Windows может показать синее окно SmartScreen, потому что приложение пока без цифровой подписи.',
+    downloadWindowsModalNotice:
+      'Для новых неподписанных сборок это нормально. Чтобы продолжить, выполните 2 шага ниже.',
+    downloadWindowsStep1Title: 'Шаг 1: нажмите "More info"',
+    downloadWindowsStep1Text:
+      'На первом экране предупреждения нажмите "More info", чтобы открыть дополнительные действия.',
+    downloadWindowsStep2Title: 'Шаг 2: нажмите "Run anyway"',
+    downloadWindowsStep2Text:
+      'На следующем экране нажмите "Run anyway", чтобы запустить установщик.',
+    downloadWindowsModalClose: 'Понятно',
+    downloadWindowsModalImage1Alt: 'Первый экран SmartScreen Windows с выделенной кнопкой More info',
+    downloadWindowsModalImage2Alt: 'Второй экран SmartScreen Windows с выделенной кнопкой Run anyway',
     downloadIosCaption: 'iPhone и iPad',
     downloadIosHint: 'Тестовая ссылка App Store — замените на реальную, когда приложение опубликуете.',
     appStoreBadgeAria: 'Загрузить в App Store',

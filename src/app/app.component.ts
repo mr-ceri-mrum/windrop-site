@@ -4,8 +4,8 @@ import { Lang, STRINGS, WindropStrings } from './windrop.i18n';
 
 const LANG_KEY = 'windrop-lang';
 
-/** Replace with your real Windows installer URL. */
-const DOWNLOAD_WINDOWS_URL = './#download-windows';
+const DOWNLOAD_WINDOWS_URL =
+  'https://github.com/mr-ceri-mrum/localsend/releases/download/1.17.3/Windrop-Setup-1.17.3.exe';
 
 /**
  * Test App Store URL — replace with your real listing, e.g.
@@ -23,6 +23,7 @@ export class AppComponent {
   private readonly document = inject(DOCUMENT);
 
   readonly lang = signal<Lang>(this.readStoredLang());
+  readonly isWindowsModalOpen = signal(false);
 
   readonly t = computed<WindropStrings>(() => STRINGS[this.lang()]);
 
@@ -43,6 +44,16 @@ export class AppComponent {
 
   setLang(next: Lang): void {
     this.lang.set(next);
+  }
+
+  onDownloadWindowsClick(event: MouseEvent): void {
+    event.preventDefault();
+    this.startWindowsDownload();
+    this.isWindowsModalOpen.set(true);
+  }
+
+  closeWindowsModal(): void {
+    this.isWindowsModalOpen.set(false);
   }
 
   private readStoredLang(): Lang {
@@ -69,7 +80,24 @@ export class AppComponent {
   readonly downloadWindowsUrl = DOWNLOAD_WINDOWS_URL;
   readonly appStoreUrl = APP_STORE_URL;
   readonly appStoreBadgeSrc = 'app-store-badge.svg';
+  readonly windowsWarningStep1Src = 'smartscreen-step-1.png';
+  readonly windowsWarningStep2Src = 'smartscreen-step-2.png';
 
   /** Settings screenshot; replace file in public/ or set to '' to hide. */
   readonly iosMediaPreviewSrc = 'windrop-ios-media-settings.png';
+
+  private startWindowsDownload(): void {
+    const frame = this.document.createElement('iframe');
+    frame.style.display = 'none';
+    frame.setAttribute('aria-hidden', 'true');
+    frame.src = DOWNLOAD_WINDOWS_URL;
+    this.document.body.appendChild(frame);
+
+    // Keep it long enough for the request to start, then clean up.
+    setTimeout(() => {
+      if (frame.parentNode) {
+        frame.parentNode.removeChild(frame);
+      }
+    }, 60000);
+  }
 }
