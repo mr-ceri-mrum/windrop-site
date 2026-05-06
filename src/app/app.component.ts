@@ -5,7 +5,7 @@ import { Lang, STRINGS, WindropStrings } from './windrop.i18n';
 const LANG_KEY = 'windrop-lang';
 
 /** Replace with your real Windows installer URL. */
-const DOWNLOAD_WINDOWS_URL = '#download-windows';
+const DOWNLOAD_WINDOWS_URL = './#download-windows';
 
 /**
  * Test App Store URL — replace with your real listing, e.g.
@@ -68,8 +68,8 @@ export class AppComponent {
 
   readonly downloadWindowsUrl = DOWNLOAD_WINDOWS_URL;
   readonly appStoreUrl = APP_STORE_URL;
-  readonly appStoreBadgeSrc = '/app-store-badge.svg';
+  readonly appStoreBadgeSrc = 'app-store-badge.svg';
 
   /** Settings screenshot; replace file in public/ or set to '' to hide. */
-  readonly iosMediaPreviewSrc = '/windrop-ios-media-settings.png';
+  readonly iosMediaPreviewSrc = 'windrop-ios-media-settings.png';
 }
