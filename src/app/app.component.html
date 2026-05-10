@@ -32,6 +32,7 @@
       <div class="get-app-inner">
         <h2 id="get-app-heading" class="get-app-title">{{ t().sectionGetApp }}</h2>
         <p class="get-app-lead">{{ t().getAppLead }}</p>
+        <p class="get-app-copy-hint">{{ t().getAppCopyHint }}</p>
 
         <div class="platform-grid">
           <div class="platform-card">
@@ -39,6 +40,49 @@
             <a class="btn-apple" [href]="downloadWindowsUrl" (click)="onDownloadWindowsClick($event)">{{
               t().downloadWindows
             }}</a>
+            <button
+              type="button"
+              class="link-copy-btn"
+              [class.link-copy-btn--done]="copiedPlatform() === 'windows'"
+              (click)="copyPlatformLink('windows')"
+              [attr.aria-label]="
+                copiedPlatform() === 'windows' ? t().linkCopiedLabel : t().copyLinkWindowsAria
+              "
+            >
+              @if (copiedPlatform() === 'windows') {
+                <svg class="link-copy-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20 6L9 17l-5-5"
+                  />
+                </svg>
+                <span>{{ t().linkCopiedLabel }}</span>
+              } @else {
+                <svg class="link-copy-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect
+                    x="9"
+                    y="9"
+                    width="13"
+                    height="13"
+                    rx="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                  />
+                </svg>
+                <span>{{ t().copyLinkLabel }}</span>
+              }
+            </button>
             <p class="platform-hint">{{ t().downloadWindowsHint }}</p>
           </div>
 
@@ -53,6 +97,47 @@
             >
               <img [src]="appStoreBadgeSrc" width="180" height="54" alt="" />
             </a>
+            <button
+              type="button"
+              class="link-copy-btn"
+              [class.link-copy-btn--done]="copiedPlatform() === 'ios'"
+              (click)="copyPlatformLink('ios')"
+              [attr.aria-label]="copiedPlatform() === 'ios' ? t().linkCopiedLabel : t().copyLinkIosAria"
+            >
+              @if (copiedPlatform() === 'ios') {
+                <svg class="link-copy-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20 6L9 17l-5-5"
+                  />
+                </svg>
+                <span>{{ t().linkCopiedLabel }}</span>
+              } @else {
+                <svg class="link-copy-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect
+                    x="9"
+                    y="9"
+                    width="13"
+                    height="13"
+                    rx="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                  />
+                </svg>
+                <span>{{ t().copyLinkLabel }}</span>
+              }
+            </button>
             <p class="platform-hint">{{ t().downloadIosHint }}</p>
           </div>
         </div>

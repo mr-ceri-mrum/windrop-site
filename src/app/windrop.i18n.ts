@@ -16,6 +16,7 @@ export interface WindropStrings {
   feat4: string;
   sectionGetApp: string;
   getAppLead: string;
+  getAppCopyHint: string;
   downloadWindows: string;
   downloadWindowsHint: string;
   downloadWindowsModalTitle: string;
@@ -31,6 +32,10 @@ export interface WindropStrings {
   downloadIosCaption: string;
   downloadIosHint: string;
   appStoreBadgeAria: string;
+  copyLinkLabel: string;
+  linkCopiedLabel: string;
+  copyLinkWindowsAria: string;
+  copyLinkIosAria: string;
   sectionIosWindowsEyebrow: string;
   sectionIosWindowsTitle: string;
   sectionIosWindowsLead: string;
@@ -65,6 +70,7 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     feat4: 'Native apps for Windows and iOS',
     sectionGetApp: 'Get WinDrop',
     getAppLead: 'Choose your platform.',
+    getAppCopyHint: 'Copy the link to open on another device.',
     downloadWindows: 'Download for Windows',
     downloadWindowsHint: 'Installer for Windows (64-bit). Download starts immediately after click.',
     downloadWindowsModalTitle: 'Windows SmartScreen notice',
@@ -84,6 +90,10 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     downloadIosCaption: 'iPhone and iPad',
     downloadIosHint: 'Test App Store link — replace with your real listing when published.',
     appStoreBadgeAria: 'Download on the App Store',
+    copyLinkLabel: 'Copy link',
+    linkCopiedLabel: 'Copied',
+    copyLinkWindowsAria: 'Copy Windows installer link',
+    copyLinkIosAria: 'Copy App Store link',
     sectionIosWindowsEyebrow: 'Windows + iPhone',
     sectionIosWindowsTitle: 'No more “Windows can’t open this file.”',
     sectionIosWindowsLead:
@@ -119,6 +129,7 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     feat4: 'Нативные приложения для Windows и iOS',
     sectionGetApp: 'Скачать WinDrop',
     getAppLead: 'Выберите платформу.',
+    getAppCopyHint: 'Ссылку можно скопировать и открыть на другом устройстве.',
     downloadWindows: 'Скачать для Windows',
     downloadWindowsHint:
       'Установщик для Windows (64-bit). Загрузка начинается сразу после нажатия.',
@@ -139,6 +150,10 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     downloadIosCaption: 'iPhone и iPad',
     downloadIosHint: 'Тестовая ссылка App Store — замените на реальную, когда приложение опубликуете.',
     appStoreBadgeAria: 'Загрузить в App Store',
+    copyLinkLabel: 'Скопировать',
+    linkCopiedLabel: 'Скопировано',
+    copyLinkWindowsAria: 'Скопировать ссылку на установщик Windows',
+    copyLinkIosAria: 'Скопировать ссылку на App Store',
     sectionIosWindowsEyebrow: 'Windows + iPhone',
     sectionIosWindowsTitle: 'Больше не «Windows не может открыть этот файл»',
     sectionIosWindowsLead:

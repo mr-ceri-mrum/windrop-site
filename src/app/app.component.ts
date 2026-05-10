@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, DestroyRef, effect, inject, signal } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Lang, STRINGS, WindropStrings } from './windrop.i18n';
 
@@ -21,13 +21,22 @@ const APP_STORE_URL = 'https://apps.apple.com/us/app/windrop/id6470000000';
 })
 export class AppComponent {
   private readonly document = inject(DOCUMENT);
+  private readonly destroyRef = inject(DestroyRef);
+  private copyFeedbackClearTimer: ReturnType<typeof setTimeout> | undefined;
 
   readonly lang = signal<Lang>(this.readStoredLang());
   readonly isWindowsModalOpen = signal(false);
+  readonly copiedPlatform = signal<'windows' | 'ios' | null>(null);
 
   readonly t = computed<WindropStrings>(() => STRINGS[this.lang()]);
 
   constructor() {
+    this.destroyRef.onDestroy(() => {
+      if (this.copyFeedbackClearTimer !== undefined) {
+        clearTimeout(this.copyFeedbackClearTimer);
+      }
+    });
+
     effect(() => {
       const l = this.lang();
       try {
@@ -54,6 +63,25 @@ export class AppComponent {
 
   closeWindowsModal(): void {
     this.isWindowsModalOpen.set(false);
+  }
+
+  copyPlatformLink(which: 'windows' | 'ios'): void {
+    const url = which === 'windows' ? DOWNLOAD_WINDOWS_URL : APP_STORE_URL;
+    void navigator.clipboard.writeText(url).then(
+      () => {
+        this.copiedPlatform.set(which);
+        if (this.copyFeedbackClearTimer !== undefined) {
+          clearTimeout(this.copyFeedbackClearTimer);
+        }
+        this.copyFeedbackClearTimer = setTimeout(() => {
+          this.copiedPlatform.set(null);
+          this.copyFeedbackClearTimer = undefined;
+        }, 2200);
+      },
+      () => {
+        /* clipboard unavailable */
+      },
+    );
   }
 
   private readStoredLang(): Lang {

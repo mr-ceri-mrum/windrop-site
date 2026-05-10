@@ -206,7 +206,16 @@
   font-size: 1.0625rem;
   color: var(--apple-sub);
   text-align: center;
-  margin: 0 0 1.75rem;
+  margin: 0 0 0.45rem;
+}
+
+.get-app-copy-hint {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--apple-muted);
+  text-align: center;
+  margin: 0 auto 1.5rem;
+  max-width: 36ch;
 }
 
 .platform-grid {
@@ -269,8 +278,54 @@
   }
 }
 
+.link-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.65rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--apple-sub);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+
+  &:hover {
+    color: var(--apple-text);
+    background: var(--apple-pill-bg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--apple-blue);
+    outline-offset: 2px;
+  }
+
+  &--done {
+    color: #248a3d;
+    pointer-events: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &--done {
+      color: #32d74b;
+    }
+  }
+}
+
+.link-copy-icon {
+  flex-shrink: 0;
+}
+
 .platform-hint {
-  margin: 1rem 0 0;
+  margin: 0.65rem 0 0;
   font-size: 0.8125rem;
   line-height: 1.45;
   color: var(--apple-muted);
