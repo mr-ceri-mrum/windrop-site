@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinDrop — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0e0e12;
+      --card: #1a1a24;
+      --text: #e4e4ec;
+      --muted: #9a9ab0;
+      --accent: #6c6cf0;
+      --border: #2a2a3a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .back-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .lang-switch button {
+      background: var(--card);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .lang-switch button.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .lang-switch button:hover:not(.active) {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+    .content { display: none; }
+    .content.active { display: block; }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    p, li {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    li { margin-bottom: 0.35rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <a href="./" class="back-link">&larr; WinDrop</a>
+      <div class="lang-switch">
+        <button id="btn-en" class="active" onclick="switchLang('en')">English</button>
+        <button id="btn-ru" onclick="switchLang('ru')">Русский</button>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div id="content-en" class="content active">
+      <h1>Privacy Policy</h1>
+      <p class="date">Effective date: May 14, 2026</p>
+
+      <p>WinDrop ("the App") is a local file-sharing application. Your privacy is important to us. This policy explains what data we collect — and, more importantly, what we do not.</p>
+
+      <h2>1. Data We Collect</h2>
+      <p><strong>None.</strong> WinDrop does not collect, store, transmit, or process any personal data or usage analytics. The App operates entirely over your local network (Wi-Fi / LAN) and does not communicate with any external servers.</p>
+
+      <h2>2. Network Communication</h2>
+      <p>Files are transferred directly between devices on the same local network. No data passes through our servers or any third-party relay. We have no servers.</p>
+
+      <h2>3. Third-Party Services</h2>
+      <p>The App does not integrate any third-party analytics, advertising, or tracking SDKs.</p>
+
+      <h2>4. Cookies &amp; Tracking</h2>
+      <p>The App does not use cookies, device identifiers, or any other tracking technologies.</p>
+
+      <h2>5. Children's Privacy</h2>
+      <p>We do not knowingly collect any information from anyone, including children under 13. Since the App collects no data at all, it is safe for users of all ages.</p>
+
+      <h2>6. Data Security</h2>
+      <p>Because no personal data is collected or stored, there is no risk of data breach from our side. File transfers occur over your local network using encrypted connections when supported by the devices involved.</p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date.</p>
+
+      <h2>8. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+      <p><a href="mailto:windrop@support.com">windrop@support.com</a></p>
+    </div>
+
+    <!-- Russian -->
+    <div id="content-ru" class="content">
+      <h1>Политика конфиденциальности</h1>
+      <p class="date">Дата вступления в силу: 14 мая 2026 г.</p>
+
+      <p>WinDrop («Приложение») — приложение для локальной передачи файлов. Конфиденциальность ваших данных важна для нас. Эта политика объясняет, какие данные мы собираем — и, что важнее, какие мы не собираем.</p>
+
+      <h2>1. Какие данные мы собираем</h2>
+      <p><strong>Никакие.</strong> WinDrop не собирает, не хранит, не передаёт и не обрабатывает никакие персональные данные или аналитику использования. Приложение работает исключительно через вашу локальную сеть (Wi-Fi / LAN) и не связывается ни с какими внешними серверами.</p>
+
+      <h2>2. Сетевое взаимодействие</h2>
+      <p>Файлы передаются напрямую между устройствами в одной локальной сети. Никакие данные не проходят через наши серверы или сторонние сервисы. У нас нет серверов.</p>
+
+      <h2>3. Сторонние сервисы</h2>
+      <p>Приложение не использует сторонние аналитические, рекламные или отслеживающие SDK.</p>
+
+      <h2>4. Файлы cookie и отслеживание</h2>
+      <p>Приложение не использует файлы cookie, идентификаторы устройств или иные технологии отслеживания.</p>
+
+      <h2>5. Конфиденциальность детей</h2>
+      <p>Мы не собираем сознательно никакую информацию ни от кого, включая детей младше 13 лет. Поскольку приложение не собирает никаких данных, оно безопасно для пользователей любого возраста.</p>
+
+      <h2>6. Безопасность данных</h2>
+      <p>Поскольку персональные данные не собираются и не хранятся, риск утечки данных с нашей стороны отсутствует. Передача файлов происходит по локальной сети с использованием зашифрованных соединений при поддержке устройствами.</p>
+
+      <h2>7. Изменения в политике</h2>
+      <p>Мы можем обновлять данную Политику конфиденциальности. Все изменения будут отражены на этой странице с обновлённой датой вступления в силу.</p>
+
+      <h2>8. Связаться с нами</h2>
+      <p>Если у вас есть вопросы по данной Политике конфиденциальности, свяжитесь с нами:</p>
+      <p><a href="mailto:windrop@support.com">windrop@support.com</a></p>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 WinDrop. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.getElementById('content-en').classList.toggle('active', lang === 'en');
+      document.getElementById('content-ru').classList.toggle('active', lang === 'ru');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>

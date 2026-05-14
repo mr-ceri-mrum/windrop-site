@@ -28,6 +28,24 @@
   color: var(--apple-text);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.privacy-link {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--apple-sub);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--apple-text);
+  }
+}
+
 .lang {
   display: inline-flex;
   border-radius: 999px;

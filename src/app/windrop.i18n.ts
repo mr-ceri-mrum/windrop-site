@@ -47,6 +47,7 @@ export interface WindropStrings {
   iosMediaImageAlt: string;
   footer: string;
   langLabel: string;
+  privacyPolicy: string;
 }
 
 export const STRINGS: Record<Lang, WindropStrings> = {
@@ -108,6 +109,7 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     iosMediaImageAlt: 'WinDrop settings on Windows: iOS media conversion options',
     footer: '© WinDrop',
     langLabel: 'Language',
+    privacyPolicy: 'Privacy Policy',
   },
   ru: {
     metaTitle: 'WinDrop — обмен файлами по Wi‑Fi',
@@ -168,5 +170,6 @@ export const STRINGS: Record<Lang, WindropStrings> = {
     iosMediaImageAlt: 'Настройки WinDrop на Windows: конвертация медиа с iOS',
     footer: '© WinDrop',
     langLabel: 'Язык',
+    privacyPolicy: 'Конфиденциальность',
   },
 };

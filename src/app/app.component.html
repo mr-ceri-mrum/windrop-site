@@ -1,23 +1,26 @@
 <div class="page">
   <header class="header">
     <span class="logo">{{ t().brand }}</span>
-    <div class="lang" role="group" [attr.aria-label]="t().langLabel">
-      <button
-        type="button"
-        class="lang-btn"
-        [class.active]="lang() === 'en'"
-        (click)="setLang('en')"
-      >
-        EN
-      </button>
-      <button
-        type="button"
-        class="lang-btn"
-        [class.active]="lang() === 'ru'"
-        (click)="setLang('ru')"
-      >
-        RU
-      </button>
+    <div class="header-actions">
+      <a class="privacy-link" href="privacy-policy.html">{{ t().privacyPolicy }}</a>
+      <div class="lang" role="group" [attr.aria-label]="t().langLabel">
+        <button
+          type="button"
+          class="lang-btn"
+          [class.active]="lang() === 'en'"
+          (click)="setLang('en')"
+        >
+          EN
+        </button>
+        <button
+          type="button"
+          class="lang-btn"
+          [class.active]="lang() === 'ru'"
+          (click)="setLang('ru')"
+        >
+          RU
+        </button>
+      </div>
     </div>
   </header>
 
